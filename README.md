@@ -1,7 +1,7 @@
 # CodeAlpha_Basic_Network_Sniffer
 Task 1 in CodeAlpha's Cyber Security Internship 
 
-# Network Sniffer
+# OverView
 
 This Python script serves as a network sniffer, capable of capturing and analyzing network traffic. It provides insights into how data flows across a network and how network packets are structured.
 
@@ -10,6 +10,17 @@ This Python script serves as a network sniffer, capable of capturing and analyzi
 
 - Python 3.x
 - Scapy library (`pip install scapy`)
+- Npcap or WinPcap
+- textwrap 
+
+## Usage
+
+1. <b>Clone the repository</b>: <br>
+git clone [https://github.com/salma-h-wagdy/CodeAlpha_Basic_Network_Sniffer](https://github.com/salma-h-wagdy/CodeAlpha_Basic_Network_Sniffer)
+
+2. <b>Install dependencies</b>: <br>
+    pip install -r requirements.txt
+3. <b> Run the script </b>
 
 ## Features
 
@@ -18,20 +29,7 @@ This Python script serves as a network sniffer, capable of capturing and analyzi
 - **Error Handling**: Implements robust error handling mechanisms using try-except blocks to gracefully handle exceptions that may occur during packet processing or sniffing.
 - **Customization**: Easily customizable with options to configure capture timeout, output format, and more.
   
-
-## Usage
-
-1. Clone the repository:
-git clone [https://github.com/salma-h-wagdy/CodeAlpha_Basic_Network_Sniffer](https://github.com/salma-h-wagdy/CodeAlpha_Basic_Network_Sniffer)
-
-2. Install dependencies:
-   scaby (pip install scapy)
-   Npcap or WinPcap
-   textwrap
-   
-4. Run the script
-
-##Notes:
+## Notes:
 - Adjust the `TIMEOUT` constant in the script to change the capture timeout duration.
 - Customize the output format and packet processing logic as needed.
 
