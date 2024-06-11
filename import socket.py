@@ -23,6 +23,7 @@ TIMEOUT = 20
 
 
 def packet(packet):
+    try:
      if packet.haslayer(Ether):
         eth = packet.getlayer(Ether)
         print('\nEthernet Frame:')
@@ -65,10 +66,15 @@ def packet(packet):
         else:  
             print('Data:')
             print(format(DATA_TAB_1, bytes(packet.payload) if hasattr(packet, 'payload') else b''))
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 def main():
-    sniff(prn=packet, store=False, timeout=TIMEOUT)
-
+    try:
+        sniff(prn=packet, store=False, timeout=TIMEOUT)
+    except KeyboardInterrupt:
+        print("Sniffing stopped.")
 def format(prefix, string, size=80):
 
     size -= len(prefix)
