@@ -1,7 +1,7 @@
 # CodeAlpha_Basic_Network_Sniffer
 Task 1 in CodeAlpha's Cyber Security Internship 
 
-# OverView
+## OverView
 
 This Python script serves as a network sniffer, capable of capturing and analyzing network traffic. It provides insights into how data flows across a network and how network packets are structured.
 
