@@ -24,10 +24,12 @@ This Python script serves as a network sniffer, capable of capturing and analyzi
 1. Clone the repository:
 git clone [https://github.com/salma-h-wagdy/CodeAlpha_Basic_Network_Sniffer](https://github.com/salma-h-wagdy/CodeAlpha_Basic_Network_Sniffer)
 
-2. Navigate to the project directory:
-    cd .../network-sniffer
-3. Install dependencies
-4. 4. Run the script
+2. Install dependencies:
+   scaby (pip install scapy)
+   Npcap or WinPcap
+   textwrap
+   
+4. Run the script
 
 ##Notes:
 - Adjust the `TIMEOUT` constant in the script to change the capture timeout duration.
