@@ -18,7 +18,8 @@ DATA_TAB_2 = '\t\t '
 DATA_TAB_3 = '\t\t\t '
 DATA_TAB_4 = '\t\t\t\t '
 
-
+#example stopping time to be able to analyze code
+TIMEOUT = 20
 
 
 def packet(packet):
@@ -66,7 +67,7 @@ def packet(packet):
             print(format(DATA_TAB_1, bytes(packet.payload) if hasattr(packet, 'payload') else b''))
 
 def main():
-    sniff(prn=packet, store=False)
+    sniff(prn=packet, store=False, timeout=TIMEOUT)
 
 def format(prefix, string, size=80):
 
