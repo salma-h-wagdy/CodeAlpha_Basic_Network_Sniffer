@@ -40,16 +40,7 @@ def packet(packet):
                 print(TAB_2 + 'Data:')
                 print(format(DATA_TAB_3, bytes(icmp_packet.load) if hasattr(icmp_packet, 'load') else b''))
 
-            elif ipv4_packet.proto == 6 and packet.haslayer(TCP):  # TCP
-                tcp_packet = packet.getlayer(TCP)
-                print(TAB_1 + 'TCP Segment:')
-                print(TAB_2 + f'Source Port: {tcp_packet.sport}, Destination Port: {tcp_packet.dport}')
-                print(TAB_2 + f'Sequence: {tcp_packet.seq}, Acknowledgement: {tcp_packet.ack}')
-                print(TAB_2 + 'Flags:')
-                print(TAB_3 + f'URG: {tcp_packet.flags & 0x20 >> 5}, ACK: {tcp_packet.flags & 0x10 >> 4}, PSH: {tcp_packet.flags & 0x08 >> 3}, RST: {tcp_packet.flags & 0x04 >> 2}, SYN: {tcp_packet.flags & 0x02 >> 1}, FIN: {tcp_packet.flags & 0x01}')
-                print(TAB_2 + 'Data:')
-                print(format(DATA_TAB_3, bytes(tcp_packet.payload) if hasattr(tcp_packet, 'payload') else b''))
-
+            
             elif ipv4_packet.proto == 17 and packet.haslayer(UDP):  # UDP
                 udp_packet = packet.getlayer(UDP)
                 print(TAB_1 + 'UDP Segment:')
