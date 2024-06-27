@@ -10,7 +10,7 @@ This Python script serves as a network sniffer, capable of capturing and analyzi
 
 - Python 3.x
 - Scapy library (`pip install scapy`)
-- Npcap or WinPcap
+- Npcap  (Nmap Packet Capture Library) or WinPcap but less preferrable
 - textwrap 
 
 ## Usage
