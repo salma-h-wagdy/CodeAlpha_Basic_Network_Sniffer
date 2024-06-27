@@ -1,8 +1,8 @@
 import sys
 
-sys.path.append("C:/Users/Salma/Anaconda/Lib/site-packages")
-import site
-print(site.getsitepackages())
+# sys.path.append("C:/Users/Salma/Anaconda/Lib/site-packages")
+# import site
+# print(site.getsitepackages())
 
 # Import Scapy library for packet manipulation
 from scapy.all import *
@@ -23,7 +23,7 @@ DATA_TAB_3 = '\t\t\t '
 DATA_TAB_4 = '\t\t\t\t '
 
 # Example stopping time to be able to analyze code
-TIMEOUT = 20
+TIMEOUT = 10
 
 # Function to handle each packet captured
 def packet(packet):
@@ -55,7 +55,7 @@ def packet(packet):
                     print(TAB_2 + f'Source Port: {tcp_packet.sport}, Destination Port: {tcp_packet.dport}')
                     print(TAB_2 + f'Sequence: {tcp_packet.seq}, Acknowledgement: {tcp_packet.ack}')
                     print(TAB_2 + 'Flags:')
-                    print(TAB_3 + f'URG: {tcp_packet.flags & 0x20 >> 5}, ACK: {tcp_packet.flags & 0x10 >> 4}, PSH: {tcp_packet.flags & 0x08 >> 3}, RST: {tcp_packet.flags & 0x04 >> 2}, SYN: {tcp_packet.flags & 0x02 >> 1}, FIN: {tcp_packet.flags & 0x01}')
+                    print(TAB_3 + f'URG: {tcp_packet.flags & 0x20 != 0}, ACK: {tcp_packet.flags & 0x10 != 0}, PSH: {tcp_packet.flags & 0x08 != 0}, RST: {tcp_packet.flags & 0x04 != 0}, SYN: {tcp_packet.flags & 0x02 != 0}, FIN: {tcp_packet.flags & 0x01 != 0}')
                     print(TAB_2 + 'Data:')
                     print(format(DATA_TAB_3, bytes(tcp_packet.payload) if hasattr(tcp_packet, 'payload') else b''))
 
